@@ -1,0 +1,72 @@
+﻿/* ===== App Shell - Header ===== */
+
+:host {
+  --content-padding: 24px;
+  display: block;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px var(--content-padding);
+  background: linear-gradient(135deg, #120a20 0%, #1e1235 50%, #120a20 100%);
+  border-bottom: 3px solid var(--primary-color);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.6),
+    0 2px 0 var(--primary-color-dim),
+    inset 0 -1px 0 rgba(240, 192, 64, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: var(--font-pixel);
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  text-shadow:
+    0 0 10px rgba(240, 192, 64, 0.6),
+    0 0 30px rgba(240, 192, 64, 0.3),
+    2px 2px 0 rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  transition: text-shadow 0.3s ease;
+  animation: subtleFloat 4s ease-in-out infinite;
+}
+
+h1:hover {
+  text-shadow:
+    0 0 15px rgba(240, 192, 64, 0.8),
+    0 0 40px rgba(240, 192, 64, 0.5),
+    0 0 60px rgba(240, 192, 64, 0.2),
+    2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Decorative pixel star before title */
+h1::before {
+  content: '⚒';
+  margin-right: 12px;
+  font-size: 1.3rem;
+  display: inline-block;
+}
+
+.content {
+  padding: 30px var(--content-padding);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 0.75rem;
+  }
+
+  .content {
+    padding: 20px 14px;
+  }
+}

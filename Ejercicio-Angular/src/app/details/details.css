@@ -1,0 +1,133 @@
+﻿/* ===== Details - Crafting Panel Style ===== */
+
+:host {
+  display: block;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+article {
+  max-width: 700px;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top accent line */
+article::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+}
+
+.listing-description {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.listing-heading {
+  font-family: var(--font-pixel);
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  line-height: 1.8;
+  text-shadow: 0 0 10px rgba(240, 192, 64, 0.4);
+}
+
+.listing-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+}
+
+/* Recipe sections */
+.listing-features {
+  margin-bottom: 28px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.section-heading {
+  font-family: var(--font-pixel);
+  color: var(--secondary-color);
+  font-size: 0.6rem;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px rgba(68, 217, 122, 0.3);
+}
+
+.listing-station {
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+  padding: 10px 14px;
+  background: rgba(240, 192, 64, 0.06);
+  border-left: 3px solid var(--primary-color);
+  border-radius: 0 4px 4px 0;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  padding-left: 28px;
+  position: relative;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+li:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Diamond bullet */
+li::before {
+  content: '◆';
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  font-size: 0.6rem;
+}
+
+p {
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  article {
+    padding: 20px 16px;
+  }
+
+  .listing-heading {
+    font-size: 0.7rem;
+  }
+
+  .listing-features {
+    padding: 14px;
+  }
+}

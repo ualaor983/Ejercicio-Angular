@@ -1,0 +1,127 @@
+﻿/* ===== TERRARIA THEME - Global Styles ===== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Terraria dark earth/cave palette */
+  --bg-primary: #1a1028;
+  --bg-secondary: #241638;
+  --bg-card: #2a1d3e;
+  --bg-card-hover: #352650;
+
+  /* Accent colors - golden / emerald */
+  --primary-color: #f0c040;
+  --primary-color-dim: #c49a30;
+  --secondary-color: #44d97a;
+  --accent-color: #6e44d9;
+  --accent-pink: #e84393;
+
+  /* Text */
+  --text-primary: #ece0ff;
+  --text-secondary: #a893c7;
+  --text-muted: #7a6894;
+
+  /* Borders & shadows */
+  --border-color: #3d2b5a;
+  --border-gold: #f0c04066;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --glow-gold: 0 0 15px rgba(240, 192, 64, 0.3);
+  --glow-green: 0 0 15px rgba(68, 217, 122, 0.3);
+
+  /* Fonts */
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+
+  /* Subtle diagonal stripe pattern like dirt blocks */
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 20px,
+      rgba(255, 255, 255, 0.008) 20px,
+      rgba(255, 255, 255, 0.008) 40px
+    );
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 5px;
+  border: 2px solid var(--bg-primary);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+/* ===== Global Button ===== */
+button.primary {
+  padding: 12px 24px;
+  border: 2px solid var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color), #e6a800);
+  color: var(--bg-primary);
+  border-radius: 4px;
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 0 #8a6a10, var(--glow-gold);
+  position: relative;
+}
+
+button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #8a6a10, 0 0 25px rgba(240, 192, 64, 0.5);
+}
+
+button.primary:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #8a6a10, var(--glow-gold);
+}
+
+/* ===== Selection ===== */
+::selection {
+  background: var(--primary-color);
+  color: var(--bg-primary);
+}

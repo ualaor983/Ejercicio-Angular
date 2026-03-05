@@ -1,0 +1,92 @@
+﻿/* ===== Item Card - Inventory Slot Style ===== */
+
+.listing {
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  padding: 22px;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+/* Inner glow border effect */
+.listing::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+  pointer-events: none;
+  transition: border-color 0.3s ease;
+}
+
+.listing:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--primary-color);
+  transform: translateY(-4px);
+  box-shadow:
+    var(--glow-gold),
+    0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.listing:hover::before {
+  border-color: rgba(240, 192, 64, 0.15);
+}
+
+/* Item name */
+.listing-heading {
+  font-family: var(--font-pixel);
+  color: var(--primary-color);
+  font-size: 0.7rem;
+  margin-bottom: 14px;
+  line-height: 1.6;
+  text-shadow: 0 0 8px rgba(240, 192, 64, 0.3);
+  transition: text-shadow 0.3s ease;
+}
+
+.listing:hover .listing-heading {
+  text-shadow: 0 0 12px rgba(240, 192, 64, 0.5);
+}
+
+/* Item ID */
+.listing-id {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-family: var(--font-body);
+}
+
+/* Crafting station */
+.listing-station {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-color);
+  font-family: var(--font-body);
+}
+
+/* "Ver detalle" link - styled as a mini button */
+section.listing a {
+  display: inline-block;
+  padding: 8px 16px;
+  background: transparent;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  border-radius: 4px;
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.25s ease;
+}
+
+section.listing a:hover {
+  background: var(--secondary-color);
+  color: var(--bg-primary);
+  box-shadow: var(--glow-green);
+  transform: translateY(-1px);
+}

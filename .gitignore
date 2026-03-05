@@ -147,3 +147,10 @@ vite.config.ts.timestamp-*
 .angular/
 dist/
 .angular/cache/
+
+# Project-specific cleanup
+/Ejercicio-Angular/.angular/
+/Ejercicio-Angular/dist/
+/Ejercicio-Angular/node_modules/
+/Ejercicio-Angular/db.json
+/Ejercicio-Angular/items.json
